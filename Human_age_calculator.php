@@ -1,4 +1,4 @@
-<!--<body style='background-color:#422F2F;'>-->
+<body style='background-color:#422F2F;'>
 <?php 
 error_reporting(1);
 if(isset($_POST['sub']))
@@ -34,15 +34,37 @@ if(isset($_POST['sub']))
 	echo "<font color='red' size='10'> You are aprox ".$ageYears." years and ".$ageMonths." months old. </font>";
 }
 ?>
+<form method="post" style='padding-top:20%;'><center>
+<span style='font-size:20px;font-weight:bold;'>Choose your date of birth</span>
+<select name="yy">
+<option value=''>Year</option>
+<?php
+for($i=1900;$i<=2020;$i++)
+{
+	echo "<option value='$i'>$i</option>";
+}
+?>
+</select>
+<select name="mm">
+<option value=''>Month</option>
+<?php
+for($i=1;$i<=12;$i++)
+{
+	echo "<option value='$i'>$i</option>";
+}
+?>
+</select>
+<select name="dd">
+<option value=''>Day</option>
+<?php
+for($i=1;$i<=31;$i++)
+{
+	echo "<option value='$i'>$i</option>";
+}
+?>
+</select>
+<input type='submit' value='Check it' name='sub'/>
+</center>
+</form>	
 
-
-	<form method='post' style='padding-top:20%;'>
-	<center>
-	<span style='font-size:20px;font-weight:bold;'>Choose your date of birth</span>
-	<input type='text' name='mm' value='Month'></br>
-	<input type='text' name='dd' value='Day'></br>
-	<input type='text' name='yy' value='Year'></br>
-	<input type='submit' value='Check it' name='sub'/>
-	</center>
-	</form>
-<!--</body>-->
+</body>
